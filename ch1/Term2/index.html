@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../Term1/">
       
       
-        <link rel="next" href="../Term2/">
+        <link rel="next" href="../Term3/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>1. C++其实是一个语言裁缝 - Effective C++</title>
+        <title>2. 尽量以 const, enum, inline 替换 \#define - Effective C++</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cc" class="md-skip">
+        <a href="#02-const-enum-inline-define" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1. C++其实是一个语言裁缝
+              2. 尽量以 const, enum, inline 替换 \#define
             
           </span>
         </div>
@@ -253,6 +253,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../Term1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. C++其实是一个语言裁缝
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -270,7 +293,7 @@
   
   
   <span class="md-ellipsis">
-    1. C++其实是一个语言裁缝
+    2. 尽量以 const, enum, inline 替换 \#define
     
   </span>
   
@@ -283,7 +306,7 @@
   
   
   <span class="md-ellipsis">
-    1. C++其实是一个语言裁缝
+    2. 尽量以 const, enum, inline 替换 \#define
     
   </span>
   
@@ -306,46 +329,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#01c" class="md-nav__link">
+  <a href="#define" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 条款 01：C++其实是一个语言裁缝
+      📖 为什么避免使用 #define
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="📌 条款 01：C++其实是一个语言裁缝">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#const-define" class="md-nav__link">
+    <span class="md-ellipsis">
+      📖 解决方法：使用 const 常量替代 #define
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📖 解决方法：使用 const 常量替代 #define">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#c" class="md-nav__link">
-    <span class="md-ellipsis">
-      📖 C++ 的起源
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#c_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      📖 C++ 的演变
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#c_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      📖 C++ 是多重范型语言
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      📖 最简单的理解方式
+      📖 特殊情况：常量指针和类内常量
     </span>
   </a>
   
@@ -357,60 +362,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#c_3" class="md-nav__link">
+  <a href="#enum" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 C++ 的四大次语言
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📌 C++ 的四大次语言">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-c" class="md-nav__link">
-    <span class="md-ellipsis">
-      1️⃣ C
+      📖 另一种选择：enum 的使用
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#2-object-oriented-c" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#inline" class="md-nav__link">
     <span class="md-ellipsis">
-      2️⃣ Object-Oriented C++
+      📖 宏的替代：使用 inline 函数
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-template-c" class="md-nav__link">
-    <span class="md-ellipsis">
-      3️⃣ Template C++
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-stl" class="md-nav__link">
-    <span class="md-ellipsis">
-      4️⃣ STL
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 小结：四个语言，四套规约
+      📖 小结
     </span>
   </a>
   
@@ -429,29 +401,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Term2/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    2. 尽量以 const, enum, inline 替换 \#define
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -514,46 +463,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#01c" class="md-nav__link">
+  <a href="#define" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 条款 01：C++其实是一个语言裁缝
+      📖 为什么避免使用 #define
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="📌 条款 01：C++其实是一个语言裁缝">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#const-define" class="md-nav__link">
+    <span class="md-ellipsis">
+      📖 解决方法：使用 const 常量替代 #define
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📖 解决方法：使用 const 常量替代 #define">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#c" class="md-nav__link">
-    <span class="md-ellipsis">
-      📖 C++ 的起源
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#c_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      📖 C++ 的演变
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#c_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      📖 C++ 是多重范型语言
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      📖 最简单的理解方式
+      📖 特殊情况：常量指针和类内常量
     </span>
   </a>
   
@@ -565,60 +496,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#c_3" class="md-nav__link">
+  <a href="#enum" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 C++ 的四大次语言
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📌 C++ 的四大次语言">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-c" class="md-nav__link">
-    <span class="md-ellipsis">
-      1️⃣ C
+      📖 另一种选择：enum 的使用
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#2-object-oriented-c" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#inline" class="md-nav__link">
     <span class="md-ellipsis">
-      2️⃣ Object-Oriented C++
+      📖 宏的替代：使用 inline 函数
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-template-c" class="md-nav__link">
-    <span class="md-ellipsis">
-      3️⃣ Template C++
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-stl" class="md-nav__link">
-    <span class="md-ellipsis">
-      4️⃣ STL
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 小结：四个语言，四套规约
+      📖 小结
     </span>
   </a>
   
@@ -649,154 +547,79 @@
 
 
 
-<h1 id="cc">📖 让自己适应C++，而非让C++适应自己</h1>
-<p><em>Accustoming Yourself to C++</em></p>
-<p>不论你的编程背景是什么，<strong>C++ 都可能让你觉得有点儿熟悉</strong>。</p>
-<p>它是一个威力强大的语言，带着众多特性，但在你可以驾驭这些威力并有效运用其特性之前，<strong>你必须先习惯 C++ 的办事方式</strong>。</p>
-<p>👉 本书的目标便是帮助你做到这一点。</p>
-<p>本章列出的就是其中<strong>最基本的一些内容</strong>。</p>
-<hr />
-<h2 id="01c">📌 条款 01：C++其实是一个语言裁缝</h2>
-<p><em>View C++ as a federation of languages.</em></p>
-<hr />
-<h3 id="c">📖 C++ 的起源</h3>
-<p>一开始，C++ 只是 C 加上一些面向对象特性。</p>
-<p>当时它的名字是 <strong>C with Classes</strong>，清楚反映了它的血缘关系。</p>
-<hr />
-<h3 id="c_1">📖 C++ 的演变</h3>
-<p>随着语言逐渐成熟，C++：</p>
+<h1 id="02-const-enum-inline-define">📖 条款 02：尽量以 const, enum, inline 替换 #define</h1>
+<p><em>Prefer consts, enums, and inlines to #defines.</em></p>
+<h2 id="define">📖 为什么避免使用 <code>#define</code></h2>
+<p>虽然 <code>#define</code> 常常被用来定义常量和宏，但它并不属于语言的一部分。</p>
+<p>更准确地说，<code>#define</code> 是预处理器指令，在编译器开始处理源码之前，预处理器会将所有宏展开。这就带来了一些问题：</p>
 <ul>
-<li>变得更活跃、更无拘束</li>
-<li>更大胆、更冒险</li>
-<li>开始接受不同于 C with Classes 的各种观念、特性和编程策略</li>
-</ul>
-<p>例如：</p>
-<ul>
-<li><strong>Exceptions（异常）</strong> 改变了函数结构化的方式（见条款 29）</li>
-<li><strong>Templates（模板）</strong> 带来了新的设计思考方式（见条款 41）</li>
-<li><strong>STL</strong> 则定义了一个前所未见的伸展性做法</li>
-</ul>
-<hr />
-<h3 id="c_2">📖 C++ 是多重范型语言</h3>
-<p>今天的 C++ 是一个 <strong>多重范型编程语言（multiparadigm programming language）</strong>，它同时支持：</p>
-<ul>
-<li>📌 过程形式（procedural）</li>
-<li>📌 面向对象形式（object-oriented）</li>
-<li>📌 函数形式（functional）</li>
-<li>📌 泛型形式（generic）</li>
-<li>📌 元编程形式（metaprogramming）</li>
-</ul>
-<p>这种能力和弹性：</p>
-<ul>
-<li>让 C++ 成为无可匹敌的工具</li>
-<li>也可能引发迷惑：<strong>所有“适当用法”似乎都有例外</strong></li>
-</ul>
-<hr />
-<h3 id="_1">📖 最简单的理解方式</h3>
-<p>👉 <strong>将 C++ 视为由相关语言组成的集合，而非单一语言。</strong></p>
-<p>在每个“次语言（sublanguage）”中：</p>
-<ul>
-<li>守则与通例倾向于<strong>简单、直观、容易记住</strong></li>
-<li>但当你从一个次语言切换到另一个，守则可能改变</li>
-</ul>
-<hr />
-<h2 id="c_3">📌 C++ 的四大次语言</h2>
-<p>为了理解 C++，你必须认识它的四个主要次语言：</p>
-<hr />
-<h3 id="1-c">1️⃣ C</h3>
-<p>说到底，C++ 仍以 C 为基础。</p>
-<p>C++ 中的：</p>
-<ul>
-<li>区块（blocks）</li>
-<li>语句（statements）</li>
-<li>预处理器（preprocessor）</li>
-<li>内置数据类型（built-in data types）</li>
-<li>数组（arrays）</li>
-<li>指针（pointers）</li>
-</ul>
-<p>👉 全都源自 C。</p>
-<p>很多时候，C++ 对问题的解法就是“较高级的 C 解法”。</p>
-<p>例如：</p>
-<ul>
-<li>📄 条款 2：谈预处理器之外的替代方案</li>
-<li>📄 条款 13：谈用对象管理资源</li>
-</ul>
-<p><strong>但在 C++ 内的 C 成分工作时，仍受 C 的局限</strong></p>
-<ul>
-<li>没有 templates</li>
-<li>没有 exceptions</li>
-<li>没有 overloading<br />
-    ...</li>
-</ul>
-<hr />
-<h3 id="2-object-oriented-c">2️⃣ Object-Oriented C++</h3>
-<p>这部分正是 <strong>C with Classes</strong> 所诉求的：</p>
-<ul>
-<li>classes（包含构造函数和析构函数）</li>
-<li>封装（encapsulation）</li>
-<li>继承（inheritance）</li>
-<li>多态（polymorphism）</li>
-<li>virtual 函数（动态绑定） ...</li>
-</ul>
-<p>👉 是<strong>面向对象设计古典守则</strong>在 C++ 上的直接实现。</p>
-<hr />
-<h3 id="3-template-c">3️⃣ Template C++</h3>
-<p>这是 C++ 的 <strong>泛型编程（generic programming）</strong> 部分，<br />
-也是大多数程序员<strong>经验最少的部分</strong>。</p>
-<p>👉 Template 相关的考虑与设计已经渗透整个 C++。</p>
-<p>良好编程守则中，“惟 template 适用”的条款并不罕见：</p>
-<ul>
-<li>📄 条款 46：调用 template functions 时如何协助类型转换</li>
-</ul>
-<p>由于 templates 的威力强大，甚至催生了新的编程范型：</p>
-<ul>
-<li><strong>Template Metaprogramming（TMP，模板元编程）</strong></li>
-</ul>
-<p>📄 条款 48 提供了 TMP 的概述，但除非你是 template 激进团队的核心成员，大可不必太担心这些。TMP 的规则对 C++ 主流编程影响不大。</p>
-<hr />
-<h3 id="4-stl">4️⃣ STL</h3>
-<p>STL 虽是个 <strong>template 程序库</strong>，但它非常特殊。</p>
-<p>它对：</p>
-<ul>
-<li>容器（containers）</li>
-<li>迭代器（iterators）</li>
-<li>算法（algorithms）</li>
-<li>函数对象（function objects）</li>
-</ul>
-<p>有极佳的协调和规约。<br />
-<strong>但 templates 和程序库也可以用其他方式建构</strong>。</p>
-<p>👉 STL 有自己独特的办事方式，<br />
-<strong>当你与 STL 一起工作时，必须遵守它的规约。</strong></p>
-<hr />
-<h2 id="_2">📌 小结：四个语言，四套规约</h2>
-<p>记住这四个次语言。<br />
-当你从一个次语言切换到另一个，<br />
-如果高效编程守则要求你改变策略，<strong>不要感到惊讶</strong>。</p>
-<p>例如：</p>
-<ul>
-<li><strong>对内置（C-like）类型</strong><ul>
-<li><code>pass-by-value</code> 通常比 <code>pass-by-reference</code> 高效</li>
-</ul>
+<li>
+<p><strong>宏名称可能不被编译器看到</strong>：例如，<code>#define ASPECT_RATIO 1.653</code> 在编译器看到它之前就被预处理器移走，导致 <code>ASPECT_RATIO</code> 并没有进入符号表。这样可能会让你在调试时迷惑，因为编译错误可能提到常量值 <code>1.653</code> 而不是宏名称 <code>ASPECT_RATIO</code>。</p>
 </li>
-<li><strong>在 Object-Oriented C++ 中</strong><ul>
-<li>由于有用户自定义构造和析构函数，<code>pass-by-reference-to-const</code> 更好</li>
-</ul>
-</li>
-<li><strong>在 Template C++ 中</strong><ul>
-<li>因为你甚至不知道对象类型，更倾向 <code>pass-by-reference-to-const</code></li>
-</ul>
-</li>
-<li><strong>在 STL 中</strong><ul>
-<li>迭代器和函数对象本质上是基于 C 指针</li>
-<li>旧式的 <code>pass-by-value</code> 规则又再次适用</li>
-</ul>
+<li>
+<p><strong>调试困难</strong>：如果宏定义在第三方的头文件中，你可能根本不清楚常量值 <code>1.653</code> 是从哪里来的，浪费时间去追踪它。</p>
 </li>
 </ul>
-<p>（具体传参方式详见 📄 条款 20）</p>
+<h2 id="const-define">📖 解决方法：使用 <code>const</code> 常量替代 <code>#define</code></h2>
+<p>将 <code>#define</code> 替换为常量：</p>
+<pre><code class="language-cpp">const double AspectRatio = 1.653;
+</code></pre>
+<p>这样做的好处：</p>
+<ul>
+<li><strong>符号表可见性</strong>：作为常量的 <code>AspectRatio</code> 会被编译器看到，确保它进入符号表，调试时可以明确显示。</li>
+<li><strong>避免重复</strong>：浮点常量使用常量代替宏，可以避免宏展开后出现多个相同的常量值。常量 <code>AspectRatio</code> 只会在内存中存在一次。</li>
+</ul>
+<h3 id="_1">📖 特殊情况：常量指针和类内常量</h3>
+<ol>
+<li><strong>常量指针</strong>： 如果要在头文件中定义一个常量的指针（比如 <code>const char*</code> 字符串），需要声明为 <code>const</code> 两次：
+    <code>cpp
+    const char* const authorName = "Scott Meyers";</code>
+    <strong>更好的做法</strong>：考虑使用 <code>std::string</code> 替代 <code>char*</code>，因为它通常更安全且易于管理：
+    <code>cpp
+    const std::string authorName = "Scott Meyers";</code></li>
+<li><strong>类内常量</strong>： 为了将常量限定在类的作用域内，可以定义为 <code>static const</code>：
+    <code>cpp
+    class GamePlayer {
+    private:
+        static const int NumTurns = 5;
+        int scores[NumTurns]; // 使用常量
+    };</code>
+    需要注意，若要取地址或编译器要求定义式时，可能还需要提供定义式：
+    <code>cpp
+    const int GamePlayer::NumTurns = 5; // 定义</code>
+    对于某些旧编译器，可能需要将定义式放在实现文件中。</li>
+</ol>
+<h2 id="enum">📖 另一种选择：<code>enum</code> 的使用</h2>
+<p>有时候，<code>enum</code> 可以作为常量的替代，尤其是当你希望将值限制在某个枚举中：</p>
+<pre><code class="language-cpp">class GamePlayer {
+private:
+    enum { NumTurns = 5 }; // 使用枚举定义常量
+    int scores[NumTurns];
+};
+</code></pre>
+<p><code>enum</code> 的优势：
+- <strong>不允许取地址</strong>：和 <code>const</code> 常量一样，<code>enum</code> 也不会导致额外的内存分配，且禁止取地址，这有助于避免意外引用。
+- <strong>与 <code>#define</code> 类似</strong>：<code>enum</code> 和 <code>#define</code> 在某些方面相似，但它更具类型安全性。</p>
+<h2 id="inline">📖 宏的替代：使用 <code>inline</code> 函数</h2>
+<p>宏看起来像函数，但却没有函数调用带来的额外开销。为了避免宏带来的潜在问题（如参数重复计算），可以使用 <code>inline</code> 函数替代宏：</p>
+<pre><code class="language-cpp">template&lt;typename T&gt;
+inline void callWithMax(const T&amp; a, const T&amp; b) {
+    f(a &gt; b ? a : b);
+}
+</code></pre>
+<p>优点：
+- <strong>类型安全</strong>：<code>inline</code> 函数是类型安全的，避免了宏可能引发的问题。
+- <strong>不会重复计算参数</strong>：和宏不同，<code>inline</code> 函数不会多次计算传入的参数。</p>
+<h2 id="_2">📖 小结</h2>
+<ul>
+<li><strong>使用 <code>const</code> 和 <code>enum</code> 替代 <code>#define</code></strong>：对于常量，优先考虑使用 <code>const</code> 或 <code>enum</code>，它们能带来更好的调试和类型安全。</li>
+<li><strong>使用 <code>inline</code> 函数替代宏</strong>：对于宏定义的函数，使用 <code>inline</code> 函数既能保证效率，也能避免宏引起的潜在问题。</li>
+<li>预处理器并不完全过时，但使用它的场合已经大大减少。</li>
+</ul>
 <hr />
 <h2 id="_3">✅ 请记住</h2>
 <blockquote>
-<p>C++ 高效编程守则<strong>视状况而变化</strong>，取决于你使用 C++ 的哪一部分。</p>
+<p><strong>优先使用编译器替代预处理器</strong>，用 <code>const</code>、<code>enum</code> 和 <code>inline</code> 函数替代 <code>#define</code>，不仅能让代码更加安全、清晰，还能减少调试时的困扰。</p>
 </blockquote>
 
 
