@@ -1,3 +1,8 @@
 site_name: Effective C++
 theme:
   name: material
+
+nav:
+  - 导读: index.md
+  - 让自己适应C++，而非让C++适应自己:
+    - 1. C++其实是一个语言裁缝: ch1/Term1.md
