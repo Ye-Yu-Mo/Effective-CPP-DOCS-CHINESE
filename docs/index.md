@@ -490,7 +490,7 @@ GameCharacter* pgc;  // pgc = "ptr to GameCharacter"
 
 ---
 
-## 📌 Boost 概览
+### 📌 Boost 概览
 
 **Boost** 是：
 

@@ -6,3 +6,5 @@ nav:
   - 导读: index.md
   - 让自己适应C++，而非让C++适应自己:
     - 1. C++其实是一个语言裁缝: ch1/Term1.md
+    - 2. 尽量以 const, enum, inline 替换 \#define: ch1/Term2.md
+    - 3. 尽可能使用 `const`: ch1/Term3.md
