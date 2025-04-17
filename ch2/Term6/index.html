@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../Term2/">
+        <link rel="prev" href="../Term5/">
       
-      
-        <link rel="next" href="../Term4/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +18,7 @@
     
     
       
-        <title>3. 尽可能使用 `const` - Effective C++</title>
+        <title>6. 如何禁用默认成员函数 - Effective C++</title>
       
     
     
@@ -62,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#03-const" class="md-skip">
+        <a href="#06" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3. 尽可能使用 `const`
+              6. 如何禁用默认成员函数
             
           </span>
         </div>
@@ -213,20 +211,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -242,7 +238,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             让自己适应C++，而非让C++适应自己
@@ -256,7 +252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Term1/" class="md-nav__link">
+      <a href="../../ch1/Term1/" class="md-nav__link">
         
   
   
@@ -279,7 +275,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Term2/" class="md-nav__link">
+      <a href="../../ch1/Term2/" class="md-nav__link">
         
   
   
@@ -299,30 +295,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    3. 尽可能使用 `const`
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../ch1/Term3/" class="md-nav__link">
         
   
   
@@ -333,168 +309,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#03-const" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 条款 03：尽可能使用 const
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📌 条款 03：尽可能使用 const">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#const" class="md-nav__link">
-    <span class="md-ellipsis">
-      🎯 为什么用 const？
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#const_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 const 的用法
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📌 const 的用法">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      👉 普通变量 / 对象
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#const_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      👉 指针相关的 const（关键点！）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      👉 函数参数和返回值
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#const_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 const 成员函数
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#const_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 const 和重载
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stl-const" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 STL 迭代器和 const
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bitwise-const-vs-logical-const" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 bitwise const vs. logical const
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📌 bitwise const vs. logical const">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#const-bitwise-const" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 const 成员函数本质：bitwise const
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mutable-bitwise-const" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 mutable 的作用：突破 bitwise const 限制
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 怎么做？
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 总结口诀 🚀
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -507,7 +321,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Term4/" class="md-nav__link">
+      <a href="../../ch1/Term4/" class="md-nav__link">
         
   
   
@@ -534,18 +348,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -561,7 +377,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             构造、析构、赋值运算
@@ -575,7 +391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ch2/Term5/" class="md-nav__link">
+      <a href="../Term5/" class="md-nav__link">
         
   
   
@@ -595,10 +411,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../ch2/Term6/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    6. 如何禁用默认成员函数
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -609,6 +447,152 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚨 问题场景：禁止对象拷贝
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛡️ 解决方案一：私有化拷贝函数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛡️ 解决方案一：私有化拷贝函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      实现步骤
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      防御效果对比
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ 解决方案二：使用不可拷贝基类
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ 解决方案二：使用不可拷贝基类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uncopyable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uncopyable基类实现
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      继承应用方式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boost" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boost库增强版
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 关键要点总结
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💡 关键要点总结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      方法对比表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cc11" class="md-nav__link">
+    <span class="md-ellipsis">
+      现代C++推荐做法（C++11+）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ 重要注意事项
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -638,6 +622,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -646,132 +632,39 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#03-const" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 条款 03：尽可能使用 const
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📌 条款 03：尽可能使用 const">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#const" class="md-nav__link">
-    <span class="md-ellipsis">
-      🎯 为什么用 const？
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#const_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 const 的用法
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📌 const 的用法">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      👉 普通变量 / 对象
+      🚨 问题场景：禁止对象拷贝
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#const_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      👉 指针相关的 const（关键点！）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      👉 函数参数和返回值
+      🛡️ 解决方案一：私有化拷贝函数
     </span>
   </a>
   
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#const_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 const 成员函数
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#const_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 const 和重载
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stl-const" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 STL 迭代器和 const
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bitwise-const-vs-logical-const" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 bitwise const vs. logical const
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📌 bitwise const vs. logical const">
+    <nav class="md-nav" aria-label="🛡️ 解决方案一：私有化拷贝函数">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#const-bitwise-const" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 const 成员函数本质：bitwise const
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mutable-bitwise-const" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 mutable 的作用：突破 bitwise const 限制
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 怎么做？
+      实现步骤
     </span>
   </a>
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      防御效果对比
+    </span>
+  </a>
   
 </li>
         
@@ -781,9 +674,84 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 总结口诀 🚀
+      🛠️ 解决方案二：使用不可拷贝基类
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ 解决方案二：使用不可拷贝基类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uncopyable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uncopyable基类实现
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      继承应用方式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boost" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boost库增强版
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 关键要点总结
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💡 关键要点总结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      方法对比表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cc11" class="md-nav__link">
+    <span class="md-ellipsis">
+      现代C++推荐做法（C++11+）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ 重要注意事项
     </span>
   </a>
   
@@ -805,134 +773,140 @@
 
 
 
-  <h1>3. 尽可能使用 `const`</h1>
-
-<h2 id="03-const">📌 条款 03：尽可能使用 <code>const</code></h2>
-<h3 id="const">🎯 为什么用 <code>const</code>？</h3>
-<ul>
-<li><strong>表明意图</strong>：明确告诉编译器、自己和其他程序员，“这东西不会被改动”。</li>
-<li><strong>防止意外修改</strong>：编译器帮你守住不该动的东西。</li>
-<li><strong>提升代码可读性和维护性</strong>：一眼看出哪些地方会改动对象，哪些地方绝对安全。</li>
-<li><strong>提高接口健壮性</strong>：比如防止运算结果被赋值覆盖，防止函数里把参数无意间改了。</li>
-</ul>
-<hr />
-<h3 id="const_1">📌 <code>const</code> 的用法</h3>
-<h4 id="_1">👉 普通变量 / 对象</h4>
-<pre><code class="language-cpp">const int a = 10;
+<h1 id="06">📌 条款06：明确禁用编译器自动生成的函数</h1>
+<h2 id="_1">🚨 问题场景：禁止对象拷贝</h2>
+<p>某些类（如房地产系统中的<code>HomeForSale</code>）需要禁止拷贝行为：</p>
+<pre><code class="language-cpp">HomeForSale h1;
+HomeForSale h2(h1);  // ❌ 应禁止拷贝构造
+HomeForSale h3 = h1; // ❌ 应禁止拷贝赋值
 </code></pre>
-<h4 id="const_2">👉 指针相关的 const（关键点！）</h4>
-<pre><code class="language-cpp">const char* p;        // 指向 const 数据的指针（不能通过 p 改变 *p）
-char* const p;        // const 指针，指向的数据可改，但不能改 p 的指向
-const char* const p;  // 都 const，指针和指向的内容都不能改
-</code></pre>
-<h4 id="_2">👉 函数参数和返回值</h4>
-<p><strong>参数加 const</strong></p>
-<pre><code class="language-cpp">void print(const std::string&amp; s);
-</code></pre>
-<ul>
-<li>防止参数在函数内被改动</li>
-<li>避免不必要的拷贝，提高性能</li>
-</ul>
-<p><strong>返回值加 const</strong></p>
-<pre><code class="language-cpp">const Rational operator*(const Rational&amp; lhs, const Rational&amp; rhs);
-</code></pre>
-<ul>
-<li>防止结果对象被赋值<br />
-    👉 <code>(a * b) = c;</code> 这种写法就会编译不过。</li>
-</ul>
-<hr />
-<h3 id="const_3">📌 const 成员函数</h3>
-<p><strong>作用</strong>：保证这个成员函数<strong>不会修改对象的成员变量</strong>。</p>
-<p><strong>语法</strong></p>
-<pre><code class="language-cpp">class Widget {
+<h2 id="_2">🛡️ 解决方案一：私有化拷贝函数</h2>
+<h3 id="_3">实现步骤</h3>
+<pre><code class="language-cpp">class HomeForSale {
 public:
-    int getValue() const;
-};
-</code></pre>
-<ul>
-<li>只能调用其他 const 成员函数</li>
-<li>不能修改非 mutable 成员变量</li>
-</ul>
-<hr />
-<h3 id="const_4">📌 const 和重载</h3>
-<p>你可以根据 this 指针的 const 性，重载成员函数：</p>
-<pre><code class="language-cpp">class TextBlock {
-public:
-    const char&amp; operator[](size_t pos) const;
-    char&amp; operator[](size_t pos);
-};
-</code></pre>
-<ul>
-<li>const 版本用于 const 对象</li>
-<li>非 const 版本用于非 const 对象</li>
-</ul>
-<hr />
-<h3 id="stl-const">📌 STL 迭代器和 const</h3>
-<ul>
-<li><code>const_iterator</code>：迭代器所指内容不能改</li>
-<li><code>const iterator</code>：迭代器本身不能改，但可以改内容</li>
-</ul>
-<pre><code class="language-cpp">std::vector&lt;int&gt;::const_iterator cit = vec.begin();
-</code></pre>
-<hr />
-<h3 id="bitwise-const-vs-logical-const">📌 bitwise const vs. logical const</h3>
-<p>这里我们详细来讲一下</p>
-<h4 id="const-bitwise-const">📌 const 成员函数本质：<strong>bitwise const</strong></h4>
-<pre><code class="language-cpp">size_t length() const;
-</code></pre>
-<p>这个 <code>const</code> 表示 <strong>该成员函数在调用时，不能修改类的非 <code>mutable</code> 成员变量</strong>。也就是 bitwise const：<br />
-👉 <strong>从“内存物理层面”保证对象状态不变。</strong></p>
-<h4 id="mutable-bitwise-const">📌 mutable 的作用：<strong>突破 bitwise const 限制</strong></h4>
-<p>但是有时候你希望在 <code>const</code> 成员函数里修改一些“对外不可见、只用于内部缓存或者计数”的数据。</p>
-<p>比如：</p>
-<ul>
-<li>缓存函数的计算结果</li>
-<li>记录访问次数</li>
-<li>缓存中间状态</li>
-</ul>
-<p>这些数据的变化<strong>不会改变对象对外的 observable state</strong>，这就是 <strong>logical const</strong>： 👉 <strong>从“逻辑意义上”对象状态是没变的。</strong></p>
-<h4 id="_3">📌 怎么做？</h4>
-<p>C++ 允许你通过 <code>mutable</code> 修饰成员变量，告诉编译器：</p>
-<blockquote>
-<p>“这个变量即便在 const 成员函数里，我也要能改，不算破坏 const 性质。”</p>
-</blockquote>
-<ul>
-<li><strong>bitwise const</strong>：物理上不改动对象的任何非 static 成员</li>
-<li><strong>logical const</strong>：只要对外“看起来没变”，哪怕内部缓存一下数据，也是合理的</li>
-</ul>
-<p>一句话总结就是</p>
-<p><strong>C++ 默认遵循 bitwise const</strong>，但你可以用 <code>mutable</code> 解除对某些成员变量的 const 限制。</p>
-<p>例如：</p>
-<pre><code class="language-cpp">class CTextBlock {
-public:
-    size_t length() const {
-        if (!lengthIsValid) {
-            textLength = strlen(pText);
-            lengthIsValid = true;
-        }
-        return textLength;
-    }
-
+    // ...其他成员函数
 private:
-    char* pText;
-    mutable size_t textLength;
-    mutable bool lengthIsValid;
+    HomeForSale(const HomeForSale&amp;);            // 仅声明不实现
+    HomeForSale&amp; operator=(const HomeForSale&amp;); // 仅声明不实现
 };
 </code></pre>
-<ul>
-<li><code>length()</code> 是个 const 成员函数，正常不能改对象成员。</li>
-<li>但 <code>textLength</code> 和 <code>lengthIsValid</code> 都是 <code>mutable</code>，所以即便在 const 函数里，也能改。</li>
-<li>这样就能<strong>缓存计算结果</strong>，避免多次调用 <code>strlen</code>，提高性能。</li>
-<li>对外来说，CTextBlock 的文字内容 <code>pText</code> 没变，调用 <code>length()</code> 返回值也一致，对象的<strong>逻辑状态</strong>没有变。</li>
-</ul>
+<h3 id="_4">防御效果对比</h3>
+<table>
+<thead>
+<tr>
+<th>调用场景</th>
+<th>错误阶段</th>
+<th>错误类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>外部代码尝试拷贝</td>
+<td>编译期</td>
+<td>访问权限错误</td>
+</tr>
+<tr>
+<td>成员/友元函数尝试拷贝</td>
+<td>链接期</td>
+<td>未定义符号错误</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h2 id="_4">📌 总结口诀 🚀</h2>
-<blockquote>
-<p>能加 const 就加 const，<br />
-指针看星号左右，<br />
-成员函数该 const 就 const，<br />
-内部缓存靠 mutable。</p>
-</blockquote>
+<h2 id="_5">🛠️ 解决方案二：使用不可拷贝基类</h2>
+<h3 id="uncopyable">Uncopyable基类实现</h3>
+<pre><code class="language-cpp">class Uncopyable {
+protected:
+    Uncopyable() = default;
+    ~Uncopyable() = default;
+private:
+    Uncopyable(const Uncopyable&amp;);            // 禁用拷贝构造
+    Uncopyable&amp; operator=(const Uncopyable&amp;); // 禁用拷贝赋值
+};
+</code></pre>
+<h3 id="_6">继承应用方式</h3>
+<pre><code class="language-cpp">class HomeForSale : private Uncopyable {  // 私有继承
+public:
+    // ...无需声明拷贝函数
+};
+</code></pre>
+<h3 id="boost">Boost库增强版</h3>
+<pre><code class="language-cpp">#include &lt;boost/noncopyable.hpp&gt;
+class HomeForSale : boost::noncopyable { /*...*/ };
+</code></pre>
+<hr />
+<h2 id="_7">💡 关键要点总结</h2>
+<pre><code class="language-text">📢 禁用拷贝双刃剑：
+1️⃣ 私有声明断生成
+2️⃣ 基类继承更干净
+3️⃣ Boost实现更优雅
+4️⃣ C++11可用=delete
+</code></pre>
+<h3 id="_8">方法对比表</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>私有化声明</td>
+<td>简单直接</td>
+<td>需要手动添加声明</td>
+</tr>
+<tr>
+<td>Uncopyable基类</td>
+<td>代码复用</td>
+<td>可能影响类继承体系</td>
+</tr>
+<tr>
+<td>boost::noncopyable</td>
+<td>标准化解决方案</td>
+<td>需要外部依赖</td>
+</tr>
+<tr>
+<td>C++11 =delete</td>
+<td>最直观的现代语法</td>
+<td>需要C++11及以上支持</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cc11">现代C++推荐做法（C++11+）</h3>
+<pre><code class="language-cpp">class HomeForSale {
+public:
+    HomeForSale(const HomeForSale&amp;) = delete;
+    HomeForSale&amp; operator=(const HomeForSale&amp;) = delete;
+};
+</code></pre>
+<hr />
+<h2 id="_9">⚠️ 重要注意事项</h2>
+<ol>
+<li><strong>继承方式选择</strong>：</li>
+<li>优先使用private继承（见条款32）</li>
+<li>
+<p>不需要virtual析构函数（见条款7）</p>
+</li>
+<li>
+<p><strong>空基类优化</strong>：
+   <code>mermaid
+   graph LR
+   A[Uncopyable] --&gt; B[HomeForSale]
+   C[其他基类] --&gt; B</code></p>
+</li>
+<li>可能影响空基类优化（见条款39）</li>
+<li>
+<p>多重继承时需注意布局（见条款40）</p>
+</li>
+<li>
+<p><strong>错误提前原则</strong>：</p>
+</li>
+<li>使用基类方案可将错误从链接期提前到编译期</li>
+<li>更早发现问题 = 更低调试成本</li>
+</ol>
+<p>🔚 选择最适合项目现状的方案，让类的拷贝行为完全掌控在你的手中！</p>
 
 
 

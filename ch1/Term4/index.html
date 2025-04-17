@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../Term2/">
+        <link rel="prev" href="../Term3/">
       
       
-        <link rel="next" href="../Term4/">
+        <link rel="next" href="../../ch2/Term5/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>3. 尽可能使用 `const` - Effective C++</title>
+        <title>4. 确保使用的是已经初始化的对象 - Effective C++</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#03-const" class="md-skip">
+        <a href="#04" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3. 尽可能使用 `const`
+              4. 确保使用的是已经初始化的对象
             
           </span>
         </div>
@@ -299,6 +299,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../Term3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. 尽可能使用 `const`
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -308,13 +331,15 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   
   <span class="md-ellipsis">
-    3. 尽可能使用 `const`
+    4. 确保使用的是已经初始化的对象
     
   </span>
   
@@ -327,7 +352,7 @@
   
   
   <span class="md-ellipsis">
-    3. 尽可能使用 `const`
+    4. 确保使用的是已经初始化的对象
     
   </span>
   
@@ -340,6 +365,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -348,125 +375,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#03-const" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 条款 03：尽可能使用 const
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📌 条款 03：尽可能使用 const">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#const" class="md-nav__link">
-    <span class="md-ellipsis">
-      🎯 为什么用 const？
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#const_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 const 的用法
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📌 const 的用法">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      👉 普通变量 / 对象
+      🚨 未初始化对象的危害
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#const_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      👉 指针相关的 const（关键点！）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      👉 函数参数和返回值
+      🎯 初始化最佳实践
     </span>
   </a>
   
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#const_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 const 成员函数
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#const_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 const 和重载
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stl-const" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 STL 迭代器和 const
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bitwise-const-vs-logical-const" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 bitwise const vs. logical const
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📌 bitwise const vs. logical const">
+    <nav class="md-nav" aria-label="🎯 初始化最佳实践">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#const-bitwise-const" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 const 成员函数本质：bitwise const
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mutable-bitwise-const" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 mutable 的作用：突破 bitwise const 限制
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 怎么做？
+      内置类型处理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      类成员初始化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="类成员初始化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      ❌ 错误示范（赋值非初始化）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ 正确做法（成员初始化列表）
     </span>
   </a>
   
@@ -483,9 +441,51 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 总结口诀 🚀
+      🌐 初始化顺序问题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌐 初始化顺序问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      跨编译单元难题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#singleton" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ 解决方案（Singleton模式）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚩 核心原则口诀
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 关键要点
     </span>
   </a>
   
@@ -495,29 +495,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Term4/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    4. 确保使用的是已经初始化的对象
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -638,6 +615,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -646,125 +625,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#03-const" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 条款 03：尽可能使用 const
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📌 条款 03：尽可能使用 const">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#const" class="md-nav__link">
-    <span class="md-ellipsis">
-      🎯 为什么用 const？
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#const_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 const 的用法
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📌 const 的用法">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      👉 普通变量 / 对象
+      🚨 未初始化对象的危害
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#const_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      👉 指针相关的 const（关键点！）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      👉 函数参数和返回值
+      🎯 初始化最佳实践
     </span>
   </a>
   
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#const_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 const 成员函数
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#const_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 const 和重载
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stl-const" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 STL 迭代器和 const
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bitwise-const-vs-logical-const" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 bitwise const vs. logical const
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📌 bitwise const vs. logical const">
+    <nav class="md-nav" aria-label="🎯 初始化最佳实践">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#const-bitwise-const" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 const 成员函数本质：bitwise const
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mutable-bitwise-const" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 mutable 的作用：突破 bitwise const 限制
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 怎么做？
+      内置类型处理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      类成员初始化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="类成员初始化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      ❌ 错误示范（赋值非初始化）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ 正确做法（成员初始化列表）
     </span>
   </a>
   
@@ -781,9 +691,51 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 总结口诀 🚀
+      🌐 初始化顺序问题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌐 初始化顺序问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      跨编译单元难题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#singleton" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ 解决方案（Singleton模式）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚩 核心原则口诀
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 关键要点
     </span>
   </a>
   
@@ -805,134 +757,83 @@
 
 
 
-  <h1>3. 尽可能使用 `const`</h1>
-
-<h2 id="03-const">📌 条款 03：尽可能使用 <code>const</code></h2>
-<h3 id="const">🎯 为什么用 <code>const</code>？</h3>
-<ul>
-<li><strong>表明意图</strong>：明确告诉编译器、自己和其他程序员，“这东西不会被改动”。</li>
-<li><strong>防止意外修改</strong>：编译器帮你守住不该动的东西。</li>
-<li><strong>提升代码可读性和维护性</strong>：一眼看出哪些地方会改动对象，哪些地方绝对安全。</li>
-<li><strong>提高接口健壮性</strong>：比如防止运算结果被赋值覆盖，防止函数里把参数无意间改了。</li>
-</ul>
+<h1 id="04">📌 条款04：确保使用的是已经初始化的对象</h1>
+<h2 id="_1">🚨 未初始化对象的危害</h2>
+<ol>
+<li><strong>读取未初始化值</strong>会导致未定义行为，可能引发程序崩溃或产生不可预测结果</li>
+<li><strong>C++初始化规则复杂性</strong>：</li>
+<li>C风格部分（如数组）不保证初始化</li>
+<li>非C风格部分（如vector）保证初始化</li>
+</ol>
 <hr />
-<h3 id="const_1">📌 <code>const</code> 的用法</h3>
-<h4 id="_1">👉 普通变量 / 对象</h4>
-<pre><code class="language-cpp">const int a = 10;
+<h2 id="_2">🎯 初始化最佳实践</h2>
+<h3 id="_3">内置类型处理</h3>
+<p>👉 <strong>必须手工初始化</strong>：</p>
+<pre><code class="language-cpp">int x = 0;                        // 整型初始化
+const char* text = &quot;C-style str&quot;; // 指针初始化
+double d;
+std::cin &gt;&gt; d;                    // 运行时初始化
 </code></pre>
-<h4 id="const_2">👉 指针相关的 const（关键点！）</h4>
-<pre><code class="language-cpp">const char* p;        // 指向 const 数据的指针（不能通过 p 改变 *p）
-char* const p;        // const 指针，指向的数据可改，但不能改 p 的指向
-const char* const p;  // 都 const，指针和指向的内容都不能改
-</code></pre>
-<h4 id="_2">👉 函数参数和返回值</h4>
-<p><strong>参数加 const</strong></p>
-<pre><code class="language-cpp">void print(const std::string&amp; s);
-</code></pre>
-<ul>
-<li>防止参数在函数内被改动</li>
-<li>避免不必要的拷贝，提高性能</li>
-</ul>
-<p><strong>返回值加 const</strong></p>
-<pre><code class="language-cpp">const Rational operator*(const Rational&amp; lhs, const Rational&amp; rhs);
-</code></pre>
-<ul>
-<li>防止结果对象被赋值<br />
-    👉 <code>(a * b) = c;</code> 这种写法就会编译不过。</li>
-</ul>
-<hr />
-<h3 id="const_3">📌 const 成员函数</h3>
-<p><strong>作用</strong>：保证这个成员函数<strong>不会修改对象的成员变量</strong>。</p>
-<p><strong>语法</strong></p>
-<pre><code class="language-cpp">class Widget {
+<h3 id="_4">类成员初始化</h3>
+<h4 id="_5">❌ 错误示范（赋值非初始化）</h4>
+<pre><code class="language-cpp">class ABEntry {
 public:
-    int getValue() const;
-};
-</code></pre>
-<ul>
-<li>只能调用其他 const 成员函数</li>
-<li>不能修改非 mutable 成员变量</li>
-</ul>
-<hr />
-<h3 id="const_4">📌 const 和重载</h3>
-<p>你可以根据 this 指针的 const 性，重载成员函数：</p>
-<pre><code class="language-cpp">class TextBlock {
-public:
-    const char&amp; operator[](size_t pos) const;
-    char&amp; operator[](size_t pos);
-};
-</code></pre>
-<ul>
-<li>const 版本用于 const 对象</li>
-<li>非 const 版本用于非 const 对象</li>
-</ul>
-<hr />
-<h3 id="stl-const">📌 STL 迭代器和 const</h3>
-<ul>
-<li><code>const_iterator</code>：迭代器所指内容不能改</li>
-<li><code>const iterator</code>：迭代器本身不能改，但可以改内容</li>
-</ul>
-<pre><code class="language-cpp">std::vector&lt;int&gt;::const_iterator cit = vec.begin();
-</code></pre>
-<hr />
-<h3 id="bitwise-const-vs-logical-const">📌 bitwise const vs. logical const</h3>
-<p>这里我们详细来讲一下</p>
-<h4 id="const-bitwise-const">📌 const 成员函数本质：<strong>bitwise const</strong></h4>
-<pre><code class="language-cpp">size_t length() const;
-</code></pre>
-<p>这个 <code>const</code> 表示 <strong>该成员函数在调用时，不能修改类的非 <code>mutable</code> 成员变量</strong>。也就是 bitwise const：<br />
-👉 <strong>从“内存物理层面”保证对象状态不变。</strong></p>
-<h4 id="mutable-bitwise-const">📌 mutable 的作用：<strong>突破 bitwise const 限制</strong></h4>
-<p>但是有时候你希望在 <code>const</code> 成员函数里修改一些“对外不可见、只用于内部缓存或者计数”的数据。</p>
-<p>比如：</p>
-<ul>
-<li>缓存函数的计算结果</li>
-<li>记录访问次数</li>
-<li>缓存中间状态</li>
-</ul>
-<p>这些数据的变化<strong>不会改变对象对外的 observable state</strong>，这就是 <strong>logical const</strong>： 👉 <strong>从“逻辑意义上”对象状态是没变的。</strong></p>
-<h4 id="_3">📌 怎么做？</h4>
-<p>C++ 允许你通过 <code>mutable</code> 修饰成员变量，告诉编译器：</p>
-<blockquote>
-<p>“这个变量即便在 const 成员函数里，我也要能改，不算破坏 const 性质。”</p>
-</blockquote>
-<ul>
-<li><strong>bitwise const</strong>：物理上不改动对象的任何非 static 成员</li>
-<li><strong>logical const</strong>：只要对外“看起来没变”，哪怕内部缓存一下数据，也是合理的</li>
-</ul>
-<p>一句话总结就是</p>
-<p><strong>C++ 默认遵循 bitwise const</strong>，但你可以用 <code>mutable</code> 解除对某些成员变量的 const 限制。</p>
-<p>例如：</p>
-<pre><code class="language-cpp">class CTextBlock {
-public:
-    size_t length() const {
-        if (!lengthIsValid) {
-            textLength = strlen(pText);
-            lengthIsValid = true;
-        }
-        return textLength;
+    ABEntry(const std::string&amp; name, const std::string&amp; address) {
+        theName = name;    // 赋值操作
+        theAddress = address;
     }
-
 private:
-    char* pText;
-    mutable size_t textLength;
-    mutable bool lengthIsValid;
+    std::string theName;
+    std::string theAddress;
 };
 </code></pre>
-<ul>
-<li><code>length()</code> 是个 const 成员函数，正常不能改对象成员。</li>
-<li>但 <code>textLength</code> 和 <code>lengthIsValid</code> 都是 <code>mutable</code>，所以即便在 const 函数里，也能改。</li>
-<li>这样就能<strong>缓存计算结果</strong>，避免多次调用 <code>strlen</code>，提高性能。</li>
-<li>对外来说，CTextBlock 的文字内容 <code>pText</code> 没变，调用 <code>length()</code> 返回值也一致，对象的<strong>逻辑状态</strong>没有变。</li>
-</ul>
+<h4 id="_6">✅ 正确做法（成员初始化列表）</h4>
+<pre><code class="language-cpp">class ABEntry {
+public:
+    ABEntry(const std::string&amp; name, const std::string&amp; address)
+        : theName(name),     // 初始化操作
+          theAddress(address) 
+    {} 
+private:
+    std::string theName;
+    std::string theAddress;
+};
+</code></pre>
 <hr />
-<h2 id="_4">📌 总结口诀 🚀</h2>
-<blockquote>
-<p>能加 const 就加 const，<br />
-指针看星号左右，<br />
-成员函数该 const 就 const，<br />
-内部缓存靠 mutable。</p>
-</blockquote>
+<h2 id="_7">🌐 初始化顺序问题</h2>
+<h3 id="_8">跨编译单元难题</h3>
+<pre><code class="language-mermaid">graph TD
+    A[编译单元A] --&gt;|使用| B[编译单元B的non-local static对象]
+    B --&gt;|可能未初始化| C[运行时错误]
+</code></pre>
+<h3 id="singleton">✅ 解决方案（Singleton模式）</h3>
+<pre><code class="language-cpp">class FileSystem {
+public:
+    static FileSystem&amp; instance() {
+        static FileSystem fs;  // 首次调用时初始化
+        return fs;
+    }
+};
+
+// 使用方式
+FileSystem::instance().operation();
+</code></pre>
+<hr />
+<h2 id="_9">🚩 核心原则口诀</h2>
+<pre><code class="language-text">📢 初始化三定律：
+1️⃣ 基础类型要手管
+2️⃣ 成员列表效率赞
+3️⃣ 静态对象本地换
+</code></pre>
+<h2 id="_10">💡 关键要点</h2>
+<ol>
+<li><strong>内置类型必须显式初始化</strong></li>
+<li><strong>优先使用成员初始化列表</strong></li>
+<li><strong>声明顺序决定初始化顺序</strong></li>
+<li><strong>用local static替代non-local static</strong></li>
+<li>多线程环境需特别注意静态对象初始化</li>
+</ol>
+<p>🔚 遵循这些准则，可有效避免90%以上的对象初始化相关问题！</p>
 
 
 

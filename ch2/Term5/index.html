@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../Term2/">
+        <link rel="prev" href="../../ch1/Term4/">
       
       
-        <link rel="next" href="../Term4/">
+        <link rel="next" href="../Term6/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>3. 尽可能使用 `const` - Effective C++</title>
+        <title>5. 空类会生成哪些默认成员函数 - Effective C++</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#03-const" class="md-skip">
+        <a href="#05c" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3. 尽可能使用 `const`
+              5. 空类会生成哪些默认成员函数
             
           </span>
         </div>
@@ -213,20 +213,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -242,7 +240,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             让自己适应C++，而非让C++适应自己
@@ -256,7 +254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Term1/" class="md-nav__link">
+      <a href="../../ch1/Term1/" class="md-nav__link">
         
   
   
@@ -279,7 +277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Term2/" class="md-nav__link">
+      <a href="../../ch1/Term2/" class="md-nav__link">
         
   
   
@@ -299,30 +297,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    3. 尽可能使用 `const`
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../ch1/Term3/" class="md-nav__link">
         
   
   
@@ -333,168 +311,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#03-const" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 条款 03：尽可能使用 const
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📌 条款 03：尽可能使用 const">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#const" class="md-nav__link">
-    <span class="md-ellipsis">
-      🎯 为什么用 const？
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#const_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 const 的用法
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📌 const 的用法">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      👉 普通变量 / 对象
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#const_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      👉 指针相关的 const（关键点！）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      👉 函数参数和返回值
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#const_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 const 成员函数
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#const_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 const 和重载
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stl-const" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 STL 迭代器和 const
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bitwise-const-vs-logical-const" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 bitwise const vs. logical const
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📌 bitwise const vs. logical const">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#const-bitwise-const" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 const 成员函数本质：bitwise const
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mutable-bitwise-const" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 mutable 的作用：突破 bitwise const 限制
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 怎么做？
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 总结口诀 🚀
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -507,7 +323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Term4/" class="md-nav__link">
+      <a href="../../ch1/Term4/" class="md-nav__link">
         
   
   
@@ -534,18 +350,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -561,7 +379,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             构造、析构、赋值运算
@@ -572,10 +390,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../ch2/Term5/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    5. 空类会生成哪些默认成员函数
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -586,6 +426,158 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚨 编译器自动补全的四大函数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 自动生成函数的行为解析
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 自动生成函数的行为解析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      默认构造函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      拷贝构造函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      拷贝赋值运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      析构函数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚩 特殊场景处理规则
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚩 特殊场景处理规则">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      ❌ 拒绝生成拷贝赋值运算符的情况
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="❌ 拒绝生成拷贝赋值运算符的情况">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      示例：引用成员引发的问题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 关键要点总结
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💡 关键要点总结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      必须手动定义的情况
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      最佳实践建议
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -598,7 +590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ch2/Term6/" class="md-nav__link">
+      <a href="../Term6/" class="md-nav__link">
         
   
   
@@ -638,6 +630,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -646,56 +640,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#03-const" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 条款 03：尽可能使用 const
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📌 条款 03：尽可能使用 const">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#const" class="md-nav__link">
-    <span class="md-ellipsis">
-      🎯 为什么用 const？
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#const_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 const 的用法
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📌 const 的用法">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      👉 普通变量 / 对象
+      🚨 编译器自动补全的四大函数
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#const_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      👉 指针相关的 const（关键点！）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      👉 函数参数和返回值
+      🎯 自动生成函数的行为解析
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 自动生成函数的行为解析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      默认构造函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      拷贝构造函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      拷贝赋值运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      析构函数
     </span>
   </a>
   
@@ -705,66 +698,31 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#const_3" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 const 成员函数
+      🚩 特殊场景处理规则
     </span>
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#const_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 const 和重载
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stl-const" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 STL 迭代器和 const
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bitwise-const-vs-logical-const" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 bitwise const vs. logical const
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📌 bitwise const vs. logical const">
+    <nav class="md-nav" aria-label="🚩 特殊场景处理规则">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#const-bitwise-const" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 const 成员函数本质：bitwise const
+      ❌ 拒绝生成拷贝赋值运算符的情况
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="❌ 拒绝生成拷贝赋值运算符的情况">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mutable-bitwise-const" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 mutable 的作用：突破 bitwise const 限制
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 怎么做？
+      示例：引用成员引发的问题
     </span>
   </a>
   
@@ -781,11 +739,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 总结口诀 🚀
+      💡 关键要点总结
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="💡 关键要点总结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      必须手动定义的情况
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      最佳实践建议
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -805,134 +787,121 @@
 
 
 
-  <h1>3. 尽可能使用 `const`</h1>
-
-<h2 id="03-const">📌 条款 03：尽可能使用 <code>const</code></h2>
-<h3 id="const">🎯 为什么用 <code>const</code>？</h3>
-<ul>
-<li><strong>表明意图</strong>：明确告诉编译器、自己和其他程序员，“这东西不会被改动”。</li>
-<li><strong>防止意外修改</strong>：编译器帮你守住不该动的东西。</li>
-<li><strong>提升代码可读性和维护性</strong>：一眼看出哪些地方会改动对象，哪些地方绝对安全。</li>
-<li><strong>提高接口健壮性</strong>：比如防止运算结果被赋值覆盖，防止函数里把参数无意间改了。</li>
-</ul>
-<hr />
-<h3 id="const_1">📌 <code>const</code> 的用法</h3>
-<h4 id="_1">👉 普通变量 / 对象</h4>
-<pre><code class="language-cpp">const int a = 10;
-</code></pre>
-<h4 id="const_2">👉 指针相关的 const（关键点！）</h4>
-<pre><code class="language-cpp">const char* p;        // 指向 const 数据的指针（不能通过 p 改变 *p）
-char* const p;        // const 指针，指向的数据可改，但不能改 p 的指向
-const char* const p;  // 都 const，指针和指向的内容都不能改
-</code></pre>
-<h4 id="_2">👉 函数参数和返回值</h4>
-<p><strong>参数加 const</strong></p>
-<pre><code class="language-cpp">void print(const std::string&amp; s);
-</code></pre>
-<ul>
-<li>防止参数在函数内被改动</li>
-<li>避免不必要的拷贝，提高性能</li>
-</ul>
-<p><strong>返回值加 const</strong></p>
-<pre><code class="language-cpp">const Rational operator*(const Rational&amp; lhs, const Rational&amp; rhs);
-</code></pre>
-<ul>
-<li>防止结果对象被赋值<br />
-    👉 <code>(a * b) = c;</code> 这种写法就会编译不过。</li>
-</ul>
-<hr />
-<h3 id="const_3">📌 const 成员函数</h3>
-<p><strong>作用</strong>：保证这个成员函数<strong>不会修改对象的成员变量</strong>。</p>
-<p><strong>语法</strong></p>
-<pre><code class="language-cpp">class Widget {
+<h1 id="05c">📌 条款05：揭秘C++自动生成的成员函数</h1>
+<h2 id="_1">🚨 编译器自动补全的四大函数</h2>
+<p><strong>空类 ≠ 真正空类</strong>！编译器会为未声明以下函数的类自动生成：</p>
+<pre><code class="language-cpp">class Empty {
 public:
-    int getValue() const;
+    Empty();                    // 默认构造函数
+    Empty(const Empty&amp;);        // 拷贝构造函数
+    ~Empty();                   // 析构函数（非虚）
+    Empty&amp; operator=(const Empty&amp;); // 拷贝赋值运算符
 };
 </code></pre>
-<ul>
-<li>只能调用其他 const 成员函数</li>
-<li>不能修改非 mutable 成员变量</li>
-</ul>
 <hr />
-<h3 id="const_4">📌 const 和重载</h3>
-<p>你可以根据 this 指针的 const 性，重载成员函数：</p>
-<pre><code class="language-cpp">class TextBlock {
-public:
-    const char&amp; operator[](size_t pos) const;
-    char&amp; operator[](size_t pos);
+<h2 id="_2">🎯 自动生成函数的行为解析</h2>
+<h3 id="_3">默认构造函数</h3>
+<ul>
+<li>调用基类和非静态成员的默认构造函数</li>
+<li><strong>不初始化内置类型</strong>（int/double等）</li>
+</ul>
+<h3 id="_4">拷贝构造函数</h3>
+<ul>
+<li>按成员<strong>逐位拷贝</strong>（bitwise copy）</li>
+<li>调用成员对象的拷贝构造函数</li>
+</ul>
+<pre><code class="language-cpp">class Example {
+    std::string str; 
+    int num;
 };
+// 编译器生成拷贝构造函数等价于：
+Example(const Example&amp; rhs) : str(rhs.str), num(rhs.num) {}
 </code></pre>
+<h3 id="_5">拷贝赋值运算符</h3>
+<pre><code class="language-cpp">// 编译器生成版本等价于：
+Example&amp; operator=(const Example&amp; rhs) {
+    str = rhs.str;
+    num = rhs.num;
+    return *this;
+}
+</code></pre>
+<h3 id="_6">析构函数</h3>
 <ul>
-<li>const 版本用于 const 对象</li>
-<li>非 const 版本用于非 const 对象</li>
+<li>调用基类和非静态成员的析构函数</li>
+<li><strong>非虚析构</strong>（除非基类有虚析构）</li>
 </ul>
 <hr />
-<h3 id="stl-const">📌 STL 迭代器和 const</h3>
-<ul>
-<li><code>const_iterator</code>：迭代器所指内容不能改</li>
-<li><code>const iterator</code>：迭代器本身不能改，但可以改内容</li>
-</ul>
-<pre><code class="language-cpp">std::vector&lt;int&gt;::const_iterator cit = vec.begin();
+<h2 id="_7">🚩 特殊场景处理规则</h2>
+<h3 id="_8">❌ 拒绝生成拷贝赋值运算符的情况</h3>
+<pre><code class="language-mermaid">graph TD
+    A[尝试生成拷贝赋值运算符] --&gt; B{是否合法?}
+    B --&gt;|含引用成员| C[拒绝生成]
+    B --&gt;|含const成员| C
+    B --&gt;|基类赋值运算符private| C
+    B --&gt;|其他合法情况| D[正常生成]
 </code></pre>
-<hr />
-<h3 id="bitwise-const-vs-logical-const">📌 bitwise const vs. logical const</h3>
-<p>这里我们详细来讲一下</p>
-<h4 id="const-bitwise-const">📌 const 成员函数本质：<strong>bitwise const</strong></h4>
-<pre><code class="language-cpp">size_t length() const;
-</code></pre>
-<p>这个 <code>const</code> 表示 <strong>该成员函数在调用时，不能修改类的非 <code>mutable</code> 成员变量</strong>。也就是 bitwise const：<br />
-👉 <strong>从“内存物理层面”保证对象状态不变。</strong></p>
-<h4 id="mutable-bitwise-const">📌 mutable 的作用：<strong>突破 bitwise const 限制</strong></h4>
-<p>但是有时候你希望在 <code>const</code> 成员函数里修改一些“对外不可见、只用于内部缓存或者计数”的数据。</p>
-<p>比如：</p>
-<ul>
-<li>缓存函数的计算结果</li>
-<li>记录访问次数</li>
-<li>缓存中间状态</li>
-</ul>
-<p>这些数据的变化<strong>不会改变对象对外的 observable state</strong>，这就是 <strong>logical const</strong>： 👉 <strong>从“逻辑意义上”对象状态是没变的。</strong></p>
-<h4 id="_3">📌 怎么做？</h4>
-<p>C++ 允许你通过 <code>mutable</code> 修饰成员变量，告诉编译器：</p>
-<blockquote>
-<p>“这个变量即便在 const 成员函数里，我也要能改，不算破坏 const 性质。”</p>
-</blockquote>
-<ul>
-<li><strong>bitwise const</strong>：物理上不改动对象的任何非 static 成员</li>
-<li><strong>logical const</strong>：只要对外“看起来没变”，哪怕内部缓存一下数据，也是合理的</li>
-</ul>
-<p>一句话总结就是</p>
-<p><strong>C++ 默认遵循 bitwise const</strong>，但你可以用 <code>mutable</code> 解除对某些成员变量的 const 限制。</p>
-<p>例如：</p>
-<pre><code class="language-cpp">class CTextBlock {
+<h4 id="_9">示例：引用成员引发的问题</h4>
+<pre><code class="language-cpp">class RefMember {
 public:
-    size_t length() const {
-        if (!lengthIsValid) {
-            textLength = strlen(pText);
-            lengthIsValid = true;
-        }
-        return textLength;
-    }
-
+    RefMember(std::string&amp; name) : nameRef(name) {}
 private:
-    char* pText;
-    mutable size_t textLength;
-    mutable bool lengthIsValid;
+    std::string&amp; nameRef;  // 引用成员
+    const int id;          // const成员
+};
+
+RefMember a(name1);
+RefMember b(name2);
+a = b;  // 编译错误！无法生成拷贝赋值运算符
+</code></pre>
+<hr />
+<h2 id="_10">💡 关键要点总结</h2>
+<pre><code class="language-text">📢 编译器生成函数四定律：
+1️⃣ 空类自动补全基础函数
+2️⃣ 内含引用/const需自定赋值
+3️⃣ 派生类受制基类权限
+4️⃣ 特殊成员需手动掌控
+</code></pre>
+<h3 id="_11">必须手动定义的情况</h3>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>需定义的函数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类含引用成员</td>
+<td>拷贝赋值运算符</td>
+</tr>
+<tr>
+<td>类含const成员</td>
+<td>拷贝赋值运算符</td>
+</tr>
+<tr>
+<td>基类赋值运算符private</td>
+<td>派生类拷贝赋值运算符</td>
+</tr>
+<tr>
+<td>需要资源管理</td>
+<td>所有特殊成员函数</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_12">最佳实践建议</h3>
+<ol>
+<li><strong>显式声明</strong>需要使用的特殊成员函数</li>
+<li>使用<code>= default</code>明确要求编译器生成默认版本</li>
+</ol>
+<pre><code class="language-cpp">class SafeClass {
+public:
+    SafeClass() = default;
+    SafeClass(const SafeClass&amp;) = default;
+    SafeClass&amp; operator=(const SafeClass&amp;) = default;
+    ~SafeClass() = default;
 };
 </code></pre>
-<ul>
-<li><code>length()</code> 是个 const 成员函数，正常不能改对象成员。</li>
-<li>但 <code>textLength</code> 和 <code>lengthIsValid</code> 都是 <code>mutable</code>，所以即便在 const 函数里，也能改。</li>
-<li>这样就能<strong>缓存计算结果</strong>，避免多次调用 <code>strlen</code>，提高性能。</li>
-<li>对外来说，CTextBlock 的文字内容 <code>pText</code> 没变，调用 <code>length()</code> 返回值也一致，对象的<strong>逻辑状态</strong>没有变。</li>
-</ul>
-<hr />
-<h2 id="_4">📌 总结口诀 🚀</h2>
-<blockquote>
-<p>能加 const 就加 const，<br />
-指针看星号左右，<br />
-成员函数该 const 就 const，<br />
-内部缓存靠 mutable。</p>
-</blockquote>
+<p>🔚 理解编译器行为是写出稳健类的第一步！当遇到特殊成员时，切记手动接管控制权。</p>
 
 
 
